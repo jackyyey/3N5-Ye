@@ -1,10 +1,10 @@
 package org.ye
 
 fun main(){
-    for (i in 1..5)
-    {
-        println(triangle(4))
-    }
+    println(triangle(4))
+    println(triangle(8))
+    println(triangle(10))
+    println(triangle(100))
 }
 fun triangle(hauteur : Int) : String {
     val triangleString = buildString {
