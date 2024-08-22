@@ -1,18 +1,21 @@
 package org.ye
 
 fun main(){
-    println(triangle(4))
+    for (i in 1..5)
+    {
+        println(triangle(4))
+    }
 }
 fun triangle(hauteur : Int) : String {
-    val triangleString = ""
-        for (i in 1..hauteur) {
-            val triangleIncomplet = "*"
-            for (j in 1..i) {
-                triangleIncomplet+"*"
+    val triangleString = buildString {
+        for (i in 1..hauteur){
+            for (j in 1 .. i){
+                append("*")
             }
-            triangleIncomplet + "/n"
-            triangleString + triangleIncomplet
+            appendLine()
         }
+    }
+
     return triangleString
 }
 
