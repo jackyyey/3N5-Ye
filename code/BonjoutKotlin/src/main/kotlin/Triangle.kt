@@ -1,15 +1,18 @@
 package org.ye
 
-fun main(arg: Int){
-    val nb = arg
-    val triangle = buildString {
-        for (i in 1..nb){
-            for (j in 1 .. i){
-                append("*")
+fun main(args: Array<String>) {
+    for (strings: String in args) {
+        val nb: Int = strings.toInt()
+        val triangle = buildString {
+            for (i in 1..nb){
+                for (j in 1 .. i){
+                    append("*")
+                }
+                appendLine()
             }
-            appendLine()
-        }
+    }
+        println(triangle)
     }
 
-    println(triangle)
+
 }
