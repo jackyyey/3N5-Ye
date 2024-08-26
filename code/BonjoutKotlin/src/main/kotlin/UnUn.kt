@@ -1,27 +1,35 @@
 package org.ye
+
+import kotlin.contracts.contract
+
 fun main() {
     println(unUn("111213"))
 }
 fun unUn(source: String): String{
-    var cnt: Int = 1
-    var num: Int = 0
-    var newstring = ""
-        for(i:Int in 0 .. source.length-1){
-            if (i!=0)
+    var nombreCourant = source[0].digitToInt()
+    var cnt = 1
+    var nouveauString = ""
+    for(i in 0 .. source.length-1)
+    {
+        if (i != source.length-1){
+            if (nombreCourant!=source[i+1].digitToInt())
             {
-                if (source[i].digitToInt() == source[i-1].digitToInt()){
-                    cnt++
-                }
-                else
-                {
-                    newstring+="$cnt$num"
-                    cnt = 1
-                }
-                num=source[i].digitToInt()
+                nouveauString+="$cnt$nombreCourant"
+                nombreCourant=source[i+1].digitToInt()
+                cnt = 1
             }
-
+            else
+            {
+                cnt++
+            }
         }
-    return newstring
+        else
+        {
+            nombreCourant=source[i].digitToInt()
+            nouveauString+="$cnt$nombreCourant"
+        }
+    }
+    return nouveauString
 }
 
 
