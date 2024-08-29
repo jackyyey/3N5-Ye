@@ -21,8 +21,8 @@ fun creeTableauAleatoire(n: Int): Array<Int> {
 }
 
 fun Somme(n: Array<Int>): Int{
-    var nb = 0
-    for (i in 0..n.size)
+    var nb = n[0]
+    for (i in 0..n.size-1)
     {
         nb+=n[i]
     }
@@ -30,8 +30,8 @@ fun Somme(n: Array<Int>): Int{
 }
 
 fun Moyenne(n: Array<Int>): Int{
-    var nb = 0
-    for (i in 0..n.size)
+    var nb = n[0]
+    for (i in 0..n.size-1)
     {
         nb+=n[i]
     }
@@ -39,8 +39,8 @@ fun Moyenne(n: Array<Int>): Int{
 }
 
 fun Max(n: Array<Int>): Int{
-    var nb = 0
-    for (i in 0..n.size)
+    var nb = n[0]
+    for (i in 0..n.size-1)
     {
         if (n[i]>=nb)
         {
@@ -51,8 +51,8 @@ fun Max(n: Array<Int>): Int{
 }
 
 fun Min(n: Array<Int>): Int{
-    var nb = 0
-    for (i in 0..n.size)
+    var nb = n[0]
+    for (i in 0..n.size-1)
     {
         if (n[i]<=nb)
         {
