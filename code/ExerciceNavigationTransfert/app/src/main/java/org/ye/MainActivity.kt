@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import org.ye.databinding.ActivityMainBinding
-import kotlin.random.Random
 
 private lateinit var binding : ActivityMainBinding
 class MainActivity : AppCompatActivity() {
@@ -17,11 +16,9 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         title = "Accueil"
-        binding.numArticle.maxValue = 20
-        binding.numArticle.minValue = 0
+
         binding.btnArticle.setOnClickListener{
             val intent = Intent(this,ArticleActivity::class.java)
-            intent.putExtra("NumeroArticle",binding.numArticle.value.toString())
             startActivity(intent)
         }
         binding.btnContact.setOnClickListener{

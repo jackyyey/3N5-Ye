@@ -7,7 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4">
+        <TextView
+            android:id="@+id/textArticle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius facilisis quam viverra vestibulum. In semper, lorem a varius pellentesque, dui dolor bibendum elit, vel pretium enim ex non est. Integer nunc dui, mollis eleifend nisi a, ornare euismod nunc. Curabitur quis nibh at lacus euismod pulvinar non venenatis libero. Morbi scelerisque, sem at venenatis viverra, massa lectus fringilla nisi, a cursus massa elit maximus purus. Aliquam ultrices et arcu non varius. In hac habitasse platea dictumst. Ut tempus rutrum mattis. Nulla tincidunt eros vitae mi iaculis tincidunt. Proin euismod egestas erat bibendum euismod. Cras vehicula risus eu ipsum faucibus, interdum congue nisl tempor. Donec posuere felis eget nibh viverra condimentum. Aenean ac luctus purus, eu ultrices magna. Pellentesque egestas lorem nisi, vel tempor arcu rhoncus vitae. Proin ut semper quam."
+            android:autoSizeTextType="uniform">
+        </TextView>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
