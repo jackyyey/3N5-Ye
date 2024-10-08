@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -34,7 +34,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures{
-        viewBinding = true
+        viewBinding=true
     }
 }
 
@@ -48,5 +48,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    runtimeOnly("com.google.android.material:material:1.13.0-alpha06")
 }

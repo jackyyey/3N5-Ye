@@ -18,6 +18,9 @@ class ContactActivity : AppCompatActivity() {
         title = "Contact"
         binding.btnAccueil.setOnClickListener{
             val intent = Intent(this,MainActivity::class.java)
+            if (binding.txtNom.text != null) {
+                intent.putExtra("Nom", binding.txtNom.text.toString())
+            }
             startActivity(intent)
         }
     }

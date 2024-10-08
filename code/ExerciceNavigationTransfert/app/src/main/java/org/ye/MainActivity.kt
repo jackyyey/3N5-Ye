@@ -16,7 +16,10 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         title = "Accueil"
-
+        if (intent.hasExtra("Nom"))
+        {
+            //intent.
+        }
         binding.btnArticle.setOnClickListener{
             val intent = Intent(this,ArticleActivity::class.java)
             startActivity(intent)
