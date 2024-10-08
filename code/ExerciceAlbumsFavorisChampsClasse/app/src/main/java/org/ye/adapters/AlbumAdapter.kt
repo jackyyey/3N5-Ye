@@ -6,14 +6,12 @@ import android.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import org.ye.databinding.AlbumBinding
-import org.ye.models.Album
 
-class AlbumAdapter: androidx.recyclerview.widget.ListAdapter<Album, AlbumAdapter.AlbumViewHolder>(AlbumDiffCallback) {
+class AlbumAdapter: androidx.recyclerview.widget.ListAdapter<String, AlbumAdapter.AlbumViewHolder>(AlbumDiffCallback) {
 
     inner class AlbumViewHolder(private val binding: AlbumBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Album) {
-            binding.titreAlbum.text = item.name
-            binding.nomArtiste.text = item.artistName
+        fun bind(item: String) {
+            binding.titreAlbum.text = item
         }
     }
 
@@ -28,11 +26,11 @@ class AlbumAdapter: androidx.recyclerview.widget.ListAdapter<Album, AlbumAdapter
     }
 
 }
-    object AlbumDiffCallback: DiffUtil.ItemCallback<Album>() {
-        override fun areItemsTheSame(oldItem: Album, newItem: Album): Boolean {
+    object AlbumDiffCallback: DiffUtil.ItemCallback<String>() {
+        override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
             return oldItem == newItem
         }
-        override fun areContentsTheSame(oldItem: Album, newItem: Album): Boolean {
-            return oldItem.name == newItem.name && oldItem.artistName == newItem.artistName && oldItem.id == newItem.id
+        override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+            return oldItem == newItem
         }
     }
