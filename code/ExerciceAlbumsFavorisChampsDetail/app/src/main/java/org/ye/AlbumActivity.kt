@@ -8,11 +8,18 @@ import androidx.core.view.WindowInsetsCompat
 import org.ye.databinding.ActivityAlbumBinding
 
 class AlbumActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityAlbumBinding
+    public lateinit var binding: ActivityAlbumBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAlbumBinding.inflate(layoutInflater)
         var view = binding.root
+        if (intent.hasExtra("album")) {
+            binding.titreAlbum.text = intent.getStringExtra("album")
+        }
+
+        if (intent.hasExtra("artist")) {
+            binding.nomArtiste.text = intent.getStringExtra("artist")
+        }
         setContentView(view)
     }
 }
