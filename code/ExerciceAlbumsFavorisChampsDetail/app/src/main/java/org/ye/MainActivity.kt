@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
         setupRecycler()
         fillRecycler()
+        setContentView(binding.root)
     }
     private fun setupRecycler(){
         adapter = AlbumAdapter()

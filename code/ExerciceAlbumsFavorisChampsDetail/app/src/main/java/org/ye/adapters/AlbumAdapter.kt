@@ -7,6 +7,7 @@ import android.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import org.ye.AlbumActivity
+import org.ye.MainActivity
 import org.ye.databinding.AlbumBinding
 import org.ye.models.Album
 
@@ -14,14 +15,12 @@ class AlbumAdapter: androidx.recyclerview.widget.ListAdapter<Album, AlbumAdapter
 
     inner class AlbumViewHolder(private val binding: AlbumBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Album) {
+
             binding.titreAlbum.text = item.name
             binding.nomArtiste.text = item.artistName
-
-            binding.btnDetail.setOnClickListener{
-                val intent: Intent = Intent(binding.root.context, AlbumActivity::class.java)
-                intent.putExtra("album", item.name)
-                intent.putExtra("artist", item.artistName)
-                binding.root.context.startActivity(intent)
+            binding.btnSupprimer.setOnClickListener{
+                var adapter: AlbumAdapter = AlbumAdapter()
+                adapter.currentList.removeAt(item.id)
             }
         }
     }
