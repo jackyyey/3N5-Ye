@@ -28,14 +28,14 @@ class MainActivity : AppCompatActivity() {
     }
     private fun fillRecycler() {
         val items: MutableList<Bingo> = mutableListOf()
-        for (i in 1..76) {
+        for (i in 1..75) {
             items.add(Bingo(i,"Tirage #$i",  getrandomNumber(items)))
         }
         adapter.submitList(items) // Pour changer le contenu de la liste, utiliser submitList de l'adapteur
     }
     private fun getrandomNumber(pListe : List<Bingo>): Int {
-        var number = Random.nextInt(1, 75)
-        if (pListe.filter { it.numeroTire == number }.count() > 0)
+        var number = Random.nextInt(1, 76)
+        if (pListe.filter { it.numeroTire == number }.count() >= 1 && pListe.count() < 74)
         {
             return getrandomNumber(pListe)
         }
