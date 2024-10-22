@@ -17,11 +17,10 @@ class AlbumAdapter: androidx.recyclerview.widget.ListAdapter<Album, AlbumAdapter
             binding.titreAlbum.text = item.name
             binding.nomArtiste.text = item.artistName
 
-            binding.btnDetail.setOnClickListener{
-                val intent: Intent = Intent(binding.root.context, AlbumActivity::class.java)
-                intent.putExtra("album", item.name)
-                intent.putExtra("artist", item.artistName)
-                binding.root.context.startActivity(intent)
+            binding.btnDelete.setOnClickListener{
+                val liste = currentList.toMutableList()
+                liste.removeAt(adapterPosition)
+                submitList(liste)
             }
         }
     }
