@@ -6,13 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.DividerItemDecoration
-import org.ye.adapters.AlbumAdapter
+import org.ye.adapters.NameAdaptor
 import org.ye.databinding.ActivityMainBinding
 import org.ye.models.Album
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var adapter: AlbumAdapter
+    private lateinit var adapter: NameAdaptor
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -21,19 +22,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
     private fun setupRecycler(){
-        adapter = AlbumAdapter()
-        binding.rvAlbumAdapter.adapter = adapter
-        binding.rvAlbumAdapter.setHasFixedSize(true)
-        binding.rvAlbumAdapter.addItemDecoration(
-            DividerItemDecoration(binding.rvAlbumAdapter.context, DividerItemDecoration.VERTICAL)
+        adapter = NameAdaptor()
+        binding.rvNameAdaptor.adapter = adapter
+        binding.rvNameAdaptor.setHasFixedSize(true)
+        binding.rvNameAdaptor.addItemDecoration(
+            DividerItemDecoration(binding.rvNameAdaptor.context, DividerItemDecoration.VERTICAL)
         )
     }
     private fun fillRecycler() {
-        val items: MutableList<Album> = mutableListOf()
-        for (i in 1..10) {
-            items.add(Album(i,"Album $i","Artiste $i"))
-        }
-        adapter.submitList(items) // Pour changer le contenu de la liste, utiliser submitList de l'adapteur
+        val items: MutableList<String> = mutableListOf(
+            "Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Hank", "Ivy", "Jack",
+            "Kathy", "Leo", "Mona", "Nina", "Oscar", "Paul", "Quincy", "Rita", "Steve", "Tina"
+        )
+        items.shuffle(Random(System.currentTimeMillis()))
+        adapter.submitList(items)
     }
 
 }

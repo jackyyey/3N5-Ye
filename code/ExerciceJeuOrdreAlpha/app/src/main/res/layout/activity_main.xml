@@ -8,12 +8,12 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_AlbumAdapter"
+        android:id="@+id/rv_NameAdaptor"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:spanCount="1"
-        tools:listitem="@layout/album"
+        tools:listitem="@layout/name"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
