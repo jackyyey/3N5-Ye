@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/titreAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Album Title"
+        android:textSize="22dp">
+        </TextView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/nomArtiste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artiste"
+            android:textSize="14dp">
+        </TextView>
+        <Button
+            android:id="@+id/btnSupprimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text="Supprimer">
+        </Button>
+    </RelativeLayout>
+</LinearLayout>
