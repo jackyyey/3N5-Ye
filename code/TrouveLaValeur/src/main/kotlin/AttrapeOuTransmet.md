@@ -1,0 +1,2 @@
+1. Example1. On devrait laisse la fonction parente gérer les exceptions puisque la validation du code est déja fait sur la fonction Main
+2. Example2. On devrait attraper l'exception et de l'envoyer vers la console puisqu'il n'y a pas du code pour valider si le code n'entrainera pas une exception.
