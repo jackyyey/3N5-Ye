@@ -1,2 +1,2 @@
-1. Le code dans le premier example est bonne puisqu'elle attrape l'exception et le met dans la console
-2. le code du deuxième example est mauvais puisqu'il ne fait rien avec l'exception attrapée et donc l'exception est ignorée
+1. Le code dans le premier example est mauvais puisqu'il retourne toujours l'exception le moins précis en premier et n'atteidra jamais l'exception plus précis.
+2. le code est bon puisque l'exception sera attrapé s'il y en a une.

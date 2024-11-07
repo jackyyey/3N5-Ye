@@ -1,5 +1,7 @@
 package org.ye
 
+import org.ye.exceptions.ElementNonTrouveException
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
@@ -17,7 +19,7 @@ fun main() {
         val elementRecherche = "f"
         val index = trouveru(elements, elementRecherche)
         println("L'élément $elementRecherche se trouve à l'index $index")
-    } catch (e: Exception) {
+    } catch (e: ElementNonTrouveException) {
         println(e.message)
     }
 }
@@ -29,5 +31,5 @@ fun trouveru(elements: Array<String>, elementRecherche:String) : Int {
             return i
         }
     }
-    throw Exception("Élément non trouvé")
+    throw ElementNonTrouveException()
 }
