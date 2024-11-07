@@ -1,0 +1,1 @@
+Non, puisque la première méthode vérifie la validité du code pour chaque fichier tandis que la deuxième méthode arrête lorsqu'un des fichiers fait lancer une exception.
