@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     private fun fillRecycler(){
         val items: MutableList<Secret> = mutableListOf()
         for (i in 1..1000) {
-            items.add(Secret("Objet #$i", LocalDateTime.of(Random.nextInt(0,2025),Random.nextInt(1,12),Random.nextInt(1,30),Random.nextInt(0,23),Random.nextInt(0,59),Random.nextInt(0,59)), Random.nextLong(1,700)))
+            items.add(Secret("Objet #$i", LocalDateTime.now(), Random.nextLong(1,700)))
         }
         adapter.submitList(items)
     }

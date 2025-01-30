@@ -11,7 +11,7 @@ import org.ye.model.Secret
 class SecretAdapter: ListAdapter<Secret, SecretAdapter.SecretItemViewHolder>(SecretItemDiffCallback) {
     inner class SecretItemViewHolder(private val binding: SecretItemBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(secret: Secret){
-            binding.txNb.text = secret.nom
+            binding.txNom.text = secret.nom.toString()
             binding.txDate.text = secret.date.toString()
             binding.txNb.text = secret.nbGrand.toString()
         }
