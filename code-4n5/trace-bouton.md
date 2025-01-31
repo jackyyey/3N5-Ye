@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 | super.onCreate(savedInstanceState)       | excécute la méthode onCreate de la classe AppCompatibility de base avant d'être remplacer par les lignes qui suivent celui-ci                     | onCreate |
 | binding = ActivityMainBinding.inflate(layoutInflater) | creer un objet de liaison entre la mise en page de la vue et les objets de la vue | onCreate |
 | binding = ActivityMainBinding.inflate(layoutInflater) | creer un objet de liaison entre la mise en page de la vue et les objets de la vue | onCreate |
-| setContentView(binding.root) | affiche les objets de l'objet de liaison du XML d'ActivityMainBinding sur l'écran  | onCreate |
+| setContentView(binding.root) | affiche les objets de l'objet de liaison sur l'écran  | onCreate |
 | Toast.makeText(this, "N", Toast.LENGTH_SHORT).show() | affiche un popup avec la lettre N  | onCreate |
 | actionBouton() | appelle la fonction actionBouton() | onCreate |
 | Toast.makeText(this, "O", Toast.LENGTH_SHORT).show() | affiche un popup avec la lettre O  | onCreate <br> **actionBouton** |
