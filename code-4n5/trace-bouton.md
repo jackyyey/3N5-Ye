@@ -35,8 +35,6 @@ class MainActivity : AppCompatActivity() {
 | actionBouton() | appelle la fonction actionBouton() | onCreate |
 | Toast.makeText(this, "O", Toast.LENGTH_SHORT).show() | affiche un popup avec la lettre O  | onCreate <br> **actionBouton** |
 | binding.bouton.setOnClickListener {} | creer un évènement qui executera du code lorsque bouton est appuié dessus  | onCreate <br> **actionBouton** |
-| Toast.makeText(this, "H", Toast.LENGTH_SHORT).show() | affiche un popup avec la lettre h | OnClick |
-| Toast.makeText(this, "O", Toast.LENGTH_SHORT).show() | affiche un popup avec la lettre O | OnClick |
 | Toast.makeText(this, "Ë", Toast.LENGTH_SHORT).show() | affiche un popup avec la lettre Ë  | onCreate |
 | Toast.makeText(this, "L", Toast.LENGTH_SHORT).show() | affiche un popup avec la lettre N  | onCreate |
 | Toast.makeText(this, "H", Toast.LENGTH_SHORT).show() | affiche un popup avec la lettre h | OnClick |
