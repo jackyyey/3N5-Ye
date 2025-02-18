@@ -9,6 +9,7 @@
     android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecyclerLong"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -16,10 +17,11 @@
         tools:listitem="@layout/long_item">
     </androidx.recyclerview.widget.RecyclerView>
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecyclerComplex"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/long_item">
+        tools:listitem="@layout/objetcomplex_item">
     </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>
