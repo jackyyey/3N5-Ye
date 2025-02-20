@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         callComplex.enqueue(object: Callback<List<Personne>>{
             override fun onResponse(call: Call<List<Personne>>,response: Response<List<Personne>>){
                 if (response.isSuccessful){
+                    var e = response.body();
                     adapter.submitList(response.body())
                 }
             }

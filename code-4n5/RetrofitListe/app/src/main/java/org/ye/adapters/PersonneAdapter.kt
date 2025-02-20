@@ -14,8 +14,8 @@ class PersonneAdapter : ListAdapter<Personne, PersonneAdapter.PersonneItemViewHo
     inner class PersonneItemViewHolder(private val binding: ObjetcomplexItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(personne: Personne) {
             binding.txChiffre.text = personne.a.toString()
-            binding.txChiffre.text = personne.b
-            binding.txChiffre.text = personne.c?.size.toString()
+            binding.txNom.text = personne.b
+            binding.txListeLength.text = "Table length = " + personne.c?.size.toString()
 
         }
     }
