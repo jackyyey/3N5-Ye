@@ -26,30 +26,52 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val service: Service = RetrofitUtil.get()
-        val callLong: Call<List<Long>> = service.getListLong()
-        val callComplex: Call<List<Personne>> = service.getListComplex()
-        call.enqueue(object: Callback<Personne>{
-            override fun onResponse(call: Call<Personne>,response: Response<Personne>){
-                if (response.isSuccessful){
-                    binding.txNom.text = response.body()!!.b
-                }
-            }
-            override fun onFailure(call: Call<Personne>, t: Throwable) {
-                t.printStackTrace()
-            }
-        })
+        setupRecycler()
+        fillRecycler()
     }
     private fun setupRecycler() {
         adapter = PersonneAdapter() // Créer l'adapteur
         adapterLong = LongAdapter() // Créer l'adapteur long
         binding.rvRecyclerComplex.adapter = adapter // Assigner l'adapteur au RecyclerView
+        binding.rvRecyclerLong.adapter = adapterLong // Assigner l'adapteur au RecyclerView
         binding.rvRecyclerComplex.setHasFixedSize(true) // Option pour améliorer les performances
+        binding.rvRecyclerLong.setHasFixedSize(true)
         binding.rvRecyclerComplex.addItemDecoration( // Ajouter un séparateur entre chaque élément
             DividerItemDecoration(
                 binding.rvRecyclerComplex.context, DividerItemDecoration.VERTICAL
             )
         )
+        binding.rvRecyclerLong.addItemDecoration( // Ajouter un séparateur entre chaque élément
+            DividerItemDecoration(
+                binding.rvRecyclerLong.context, DividerItemDecoration.VERTICAL
+            )
+        )
     }
+    private fun fillRecycler() {
+        val service: Service = RetrofitUtil.get()
+        val callLong: Call<List<Long>> = service.getListLong()
+        val callComplex: Call<List<Personne>> = service.getListComplex()
+        callComplex.enqueue(object: Callback<List<Personne>>{
+            override fun onResponse(call: Call<List<Personne>>,response: Response<List<Personne>>){
+                if (response.isSuccessful){
+                    adapter.submitList(response.body())
+                }
+            }
+            override fun onFailure(call: Call<List<Personne>>, t: Throwable) {
+                t.printStackTrace()
+            }
+        })
+         callLong.enqueue(object: Callback<List<Long>>{
+            override fun onResponse(call: Call<List<Long>>,response: Response<List<Long>>){
+                if (response.isSuccessful){
+                    adapterLong.submitList(response.body())
+                }
+            }
+            override fun onFailure(call: Call<List<Long>>, t: Throwable) {
+                t.printStackTrace()
+            }
+        })
+    }
+
 
 }

@@ -38,6 +38,6 @@ object PersonneItemDiffCallback : DiffUtil.ItemCallback<Personne>() {
     override fun areContentsTheSame(oldItem: Personne, newItem: Personne): Boolean {
         return oldItem.a == newItem.a &&
                 oldItem.b == newItem.b &&
-                oldItem.c == newItem.c
+                oldItem.c.contentEquals(newItem.c)
     }
 }
