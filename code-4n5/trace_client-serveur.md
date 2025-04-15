@@ -20,4 +20,4 @@
 | ligne exécutée | effet | pile d'appels |
 |-----|-----|-----|
 | if (response.isSuccessful) | Vérifie que la réponse du serveur est 200 | __displayDetails__ <br> OnCreate |
-| binding.tvTaskName.text = response.body()!!.name | Affiche le nom de la tâche |
+| binding.tvTaskName.text = response.body()!!.name | Affiche le nom de la tâche | __displayDetails__ <br> OnCreate |
