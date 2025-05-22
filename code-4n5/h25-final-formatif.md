@@ -12,7 +12,7 @@
 ```java
 @PostMapping("/examen/{nom}/ajouterNote")
 
-public @ResponseBody int ajouterNote(@RequestParam(name = "bonus") Integer bonus, @RequestBody PostNoteRequest noteRequest){
+public @ResponseBody int ajouterNote(@PathVariable String nom @RequestParam(name = "bonus") Integer bonus, @RequestBody PostNoteRequest noteRequest){
   noteRequest.value += bonus;
   return noteRequest.value;
 } 
